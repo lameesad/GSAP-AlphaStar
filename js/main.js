@@ -60,3 +60,20 @@ $(".fourColItem").hover(
     TweenMax.to($(this), 0.5, { boxShadow: " 0 0 20px rgba(0,0,0,0.06)" });
   }
 );
+
+//SERVICES SECTION
+
+TweenMax.set(".serviceBoxInner", { y: 200, opacity: 0 });
+
+$(".serviceBox").hover(
+  function () {
+    TweenMax.to($(this).find(".serviceBoxInner"), 0.5, {
+      y: 0,
+      opacity: 1,
+      ease: Power2.easeOut,
+    });
+  },
+  function () {
+    TweenMax.to($(this).find(".serviceBoxInner"), 0.5, { y: 200, opacity: 0 });
+  }
+);
