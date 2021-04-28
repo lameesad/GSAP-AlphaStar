@@ -47,3 +47,16 @@ TweenMax.fromTo(
   { y: 80, opacity: 0 },
   { y: 0, opacity: 1, delay: 1.6, ease: Back.easeOut }
 );
+
+//FOUR COLUMN SECTION
+
+$(".fourColItem").hover(
+  function () {
+    TweenMax.to($(this), 0.5, { y: -10, scale: 1.03 });
+    TweenMax.to($(this), 0.5, { boxShadow: " 0 0 20px rgba(0,0,0,0.76)" });
+  },
+  function () {
+    TweenMax.to($(this), 0.5, { y: 0, scale: 1 });
+    TweenMax.to($(this), 0.5, { boxShadow: " 0 0 20px rgba(0,0,0,0.06)" });
+  }
+);
