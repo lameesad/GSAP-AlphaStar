@@ -9,3 +9,24 @@ $(".burgerIcon").hover(
     TweenMax.to(".burgerLine:last-child", 0.2, { x: 0 });
   }
 );
+
+var tlmenu = new TimelineMax({ paused: true });
+
+//autoAlpha toggles any thing that is hidden
+tlmenu
+  .to("nav", 0.3, { autoAlpha: 1 })
+  .staggerFromTo(
+    "nav li",
+    0.5,
+    { y: 100, opacity: 0 },
+    { y: 0, opacity: 1 },
+    0.1
+  );
+
+$(".burgerIcon").click(function () {
+  tlmenu.play(0);
+});
+
+$(".closeButton").click(function () {
+  tlmenu.reverse(0);
+});
